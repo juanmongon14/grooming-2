@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservar Cita</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #009688;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 2rem;
+      background-color: #009688;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00796b;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 1rem;
+      text-align: center;
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Reservar Cita para tu Mascota</h2>
+    <form id="reservaForm">
+      <label for="nombreDueño">Nombre del dueño</label>
+      <input type="text" id="nombreDueño" name="nombreDueño" required>
+
+      <label for="nombreMascota">Nombre de la mascota</label>
+      <input type="text" id="nombreMascota" name="nombreMascota" required>
+
+      <label for="fecha">Fecha de la cita</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="servicio">Tipo de servicio</label>
+      <select id="servicio" name="servicio" required>
+        <option value="">-- Selecciona un servicio --</option>
+        <option value="corte">Corte de pelo</option>
+        <option value="baño">Baño</option>
+        <option value="baño-corte">Baño + Corte</option>
+        <option value="desparasitado">Desparasitado</option>
+      </select>
+
+      <button type="submit">Reservar</button>
+      <p class="success-message" id="mensajeExito">¡Reserva registrada con éxito!</p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("reservaForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("mensajeExito").style.display = "block";
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
