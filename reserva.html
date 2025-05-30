@@ -87,17 +87,19 @@
 
       <label for="nombreMascota">Nombre de la mascota</label>
       <input type="text" id="nombreMascota" name="nombreMascota" required>
+      <label for="razaMAscota">Raza de la mascota </label>
+      <input type="text" id="razaMAscota" name="razaMAscota" required>
+        <label for="fechaHora">Fecha y hora de la cita</label>
+         <input type="datetime-local" id="fechaHora" name="fechaHora" required>
 
-      <label for="fecha">Fecha de la cita</label>
-      <input type="date" id="fecha" name="fecha" required>
-
-      <label for="servicio">Tipo de servicio</label>
+      <label for="servicio">Tipo de baño</label>
       <select id="servicio" name="servicio" required>
-        <option value="">-- Selecciona un servicio --</option>
-        <option value="corte">Corte de pelo</option>
-        <option value="baño">Baño</option>
-        <option value="baño-corte">Baño + Corte</option>
-        <option value="desparasitado">Desparasitado</option>
+        <option value="">-- Selecciona un tipo de baño --</option>
+        <option value="general">General</option>
+        <option value="antipulgas">Antipulgas</option>
+        <option value="medicado">Medicado</option>
+        <option value="hidratante">Hidratante</option>
+        <option value="recuperacion de manto">Recuperacion de manto</option>
       </select>
 
       <button type="submit">Reservar</button>
